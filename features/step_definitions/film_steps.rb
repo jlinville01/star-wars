@@ -1,4 +1,4 @@
-Given(/^a user requests all films$/) do
+Given(/^a user queries all films$/) do
   films
 end
 
@@ -6,7 +6,7 @@ Then(/^(.*) films should be returned$/) do |quantity|
   expect(@films.size).to eql(quantity.to_i)
 end
 
-Given(/^a user requests film ID (.*)$/) do |id|
+Given(/^a user queries film ID (.*)$/) do |id|
   film(id)
 end
 

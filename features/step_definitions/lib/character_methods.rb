@@ -1,8 +1,8 @@
 def characters
   payload = {
-      query: {
+    query: {
 
-      }
+    }
   }
 end
 
