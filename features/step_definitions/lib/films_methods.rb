@@ -11,8 +11,8 @@ def films
         }
       }"
   }
-  all_films = parse_and_report('POST', BASE_HOST, payload, nil)
-  @films = all_films[:data][:allFilms][:films]
+  parsed_res = parse_and_report('POST', BASE_HOST, payload, nil)
+  @films = parsed_res[:data][:allFilms][:films]
 end
 
 def film(id)

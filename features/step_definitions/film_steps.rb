@@ -13,3 +13,7 @@ end
 Then(/^the film title should be Return of the Jedi$/) do |title|
   expect(@film[:title]).to eql(title)
 end
+
+Given(/^a user queries all films released after (.*)$/) do |cutoff_date|
+
+end

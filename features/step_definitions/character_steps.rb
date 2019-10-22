@@ -3,7 +3,7 @@ Given(/^a user query for all characters$/) do
 end
 
 Then(/^response for all characters should include (.*)$/) do |character_name|
-  expect(@characters).to include(character_name)
+  expect(@all_characters).to include(name: character_name)
 end
 
 Given(/^a user queries for character (.*)$/) do |character_name|
