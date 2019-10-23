@@ -1,7 +1,7 @@
 def films
   payload = {
     query:
-      "query {
+      'query {
         allFilms {
           films {
             id
@@ -10,7 +10,7 @@ def films
             releaseDate
           }
         }
-      }"
+      }'
   }
   parsed_res = parse_and_report('POST', BASE_HOST, payload, nil)
   @films = parsed_res[:data][:allFilms][:films]
