@@ -1,9 +1,6 @@
-require 'securerandom'
 require 'json'
-require 'pp'
 require 'rest-client'
 require 'date'
-require 'base64'
 require_relative './helper.rb'
 
 # Sets up the Rails environment for Cucumber
