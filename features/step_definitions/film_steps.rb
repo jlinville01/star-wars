@@ -15,5 +15,9 @@ Then(/^the film title should be Return of the Jedi$/) do |title|
 end
 
 Given(/^a user queries all films released after (.*)$/) do |cutoff_date|
+  films_after_date(films, cutoff_date)
+end
 
+Then(/^(.*) films after date should be returned$/) do |film_count|
+  expect(@cutoff_films.size).to eql(film_count.to_i)
 end

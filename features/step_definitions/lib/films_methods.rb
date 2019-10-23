@@ -7,6 +7,7 @@ def films
             id
             title
             episodeID
+            releaseDate
           }
         }
       }"
@@ -28,4 +29,13 @@ def film(id)
   }
   @film = parse_and_report('POST', BASE_HOST, payload, nil)
   puts @film
+end
+
+def films_after_date(films, cutoff_date)
+  @cutoff_films = []
+  films.each do |film|
+    if film[:releaseDate] > cutoff_date
+      @cutoff_films.push(film)
+    end
+  end
 end
