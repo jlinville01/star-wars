@@ -1,6 +1,8 @@
 # Star Wars API
 
-The objective of this repository was to show a proof of concept for GraphQL api testing.
+The objective of this repository was to show a proof of concept for GraphQL api testing. 
+
+Tests hit: https://github.com/graphql/swapi-graphql
 
 # Run Tests
 
