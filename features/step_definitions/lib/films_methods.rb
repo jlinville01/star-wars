@@ -38,8 +38,6 @@ end
 def films_after_date(films, cutoff_date)
   @cutoff_films = []
   films.each do |film|
-    if film[:releaseDate] > cutoff_date
-      @cutoff_films.push(film)
-    end
+    @cutoff_films.push(film) if film[:releaseDate] > cutoff_date
   end
 end
