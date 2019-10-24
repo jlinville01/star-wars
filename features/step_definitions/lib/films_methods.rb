@@ -12,7 +12,9 @@ def films
         }
       }'
   }
-  parsed_res = parse_and_report('POST', BASE_HOST, payload, nil)
+  res = RestClient.post(BASE_HOST, payload, nil)
+  expect(res.code).to eql(200)
+  parsed_res = JSON.parse(res, symbolize_names: true)
   @films = parsed_res[:data][:allFilms][:films]
 end
 
@@ -27,7 +29,9 @@ def film(id)
       film_id: id.to_i
     }
   }
-  @film = parse_and_report('POST', BASE_HOST, payload, nil)
+  res = RestClient.post(BASE_HOST, payload, nil)
+  expect(res.code).to eql(200)
+  @film = JSON.parse(res, symbolize_names: true)
   puts @film
 end
 

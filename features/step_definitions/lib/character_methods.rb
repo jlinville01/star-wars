@@ -9,7 +9,9 @@ def characters
         }
       }'
   }
-  parsed_res = parse_and_report('POST', BASE_HOST, payload, nil)
+  res = RestClient.post(BASE_HOST, payload, nil)
+  expect(res.code).to eql(200)
+  parsed_res = JSON.parse(res, symbolize_names: true)
   @all_characters = parsed_res[:data][:allPeople][:people]
 end
 
@@ -23,6 +25,8 @@ def character(character_id)
       }',
     variables: { character_id: character_id.to_i}
   }
-  parsed_res = parse_and_report('POST', BASE_HOST, payload, nil)
+  res = RestClient.post(BASE_HOST, payload, nil)
+  expect(res.code).to eql(200)
+  parsed_res = JSON.parse(res, symbolize_names: true)
   puts parsed_res.to_yaml
 end
