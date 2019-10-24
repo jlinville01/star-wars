@@ -1,4 +1,4 @@
-# Star Wars API
+# Star Wars
 
 The objective of this repository was to show a proof of concept for GraphQL api testing. 
 
