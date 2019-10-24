@@ -29,4 +29,5 @@ def character(character_id)
   expect(res.code).to eql(200)
   parsed_res = JSON.parse(res, symbolize_names: true)
   puts parsed_res.to_yaml
+  @character = parsed_res[:data]
 end
