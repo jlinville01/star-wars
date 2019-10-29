@@ -6,12 +6,12 @@ Then(/^(.*) films should be returned$/) do |quantity|
   expect(@films.size).to eql(quantity.to_i)
 end
 
-Given(/^a user queries film ID (.*)$/) do |id|
-  film(id)
+Given(/^a user queries film by ID (.*) and film ID (.*)$/) do |id, film_id|
+  film(id, film_id)
 end
 
-Then(/^the film title should be Return of the Jedi$/) do |title|
-  expect(@film[:title]).to eql(title)
+Then(/^the film title should be (.*)$/) do |title|
+  expect(@film[:data][:film][:title]).to eql(title)
 end
 
 Given(/^a user queries all films released after (.*)$/) do |cutoff_date|

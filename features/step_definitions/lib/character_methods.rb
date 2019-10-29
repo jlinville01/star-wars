@@ -23,7 +23,9 @@ def character(character_id)
           name
         }
       }',
-    variables: { character_id: character_id.to_i}
+    variables: { 
+      character_id: character_id.to_i
+    }
   }
   res = RestClient.post(BASE_HOST, payload, nil)
   expect(res.code).to eql(200)

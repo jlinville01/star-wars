@@ -18,21 +18,19 @@ def films
   @films = parsed_res[:data][:allFilms][:films]
 end
 
-def film(id)
+def film(id, film_id)
   payload = {
-    query: 'query ($film_id: ID) {
-      film(filmID: $film_id) {
-        title
-      }
-    }',
-    variables: {
-      film_id: id.to_i
-    }
+    query: 
+      "query {
+        film(id: \"#{id}\", filmID: #{film_id}) {
+          title
+          episodeID
+        }
+      }",
   }
   res = RestClient.post(BASE_HOST, payload, nil)
   expect(res.code).to eql(200)
   @film = JSON.parse(res, symbolize_names: true)
-  puts @film
 end
 
 def films_after_date(films, cutoff_date)

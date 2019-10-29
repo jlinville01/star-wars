@@ -8,7 +8,7 @@ Feature: Star Wars Films
 
   @specific_film
   Scenario: A user requests a specific film
-    Given a user queries film ID 3
+    Given a user queries film by ID ZmlsbXM6Mw== and film ID 3
     Then the film title should be Return of the Jedi
 
   @films_released_after
