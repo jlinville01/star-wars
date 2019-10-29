@@ -11,7 +11,7 @@ Given(/^a user queries film by ID (.*) and film ID (.*)$/) do |id, film_id|
 end
 
 Then(/^the film title should be (.*)$/) do |title|
-  expect(@film[:data][:film][:title]).to eql(title)
+  expect(@film[:title]).to eql(title)
 end
 
 Given(/^a user queries all films released after (.*)$/) do |cutoff_date|
