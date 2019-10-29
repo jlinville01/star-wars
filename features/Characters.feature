@@ -8,5 +8,5 @@ Feature: Star Wars Characters
 
   @specific_character
   Scenario: A user searches for Luke Skywalker
-    Given a user queries for character id 1
+    Given a user queries for ID cGVvcGxlOjE= and Character ID 1
     Then a user should get Luke Skywalker character returned
